@@ -10,6 +10,7 @@ public class BallController : MonoBehaviour
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private ChargeBar chargeBar;
     [SerializeField] private ChargeBar powerBar;
+    [SerializeField] private Animator transitionAnimator;
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -101,6 +102,6 @@ public class BallController : MonoBehaviour
         spriteRenderer.enabled = false;
         circleCollider.enabled = false;
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        yield return SceneTransition.Run(transitionAnimator, "Menu");
     }
 }

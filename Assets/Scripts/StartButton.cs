@@ -6,14 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class StartButton : MonoBehaviour
 {
-    public Animator SceneTransition;
-
-    private float transitionTime;
+    public Animator TransitionAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        transitionTime = SceneTransition.runtimeAnimatorController.animationClips[0].length; 
     }
 
     // Update is called once per frame
@@ -24,15 +21,7 @@ public class StartButton : MonoBehaviour
 
     public void OnStartButtonClick()
     {
-
-        StartCoroutine(LevelTransition());
-    }
-
-    IEnumerator LevelTransition()
-    {
-        SceneTransition.SetTrigger("Start");
         AudioManager.Instance.PlayEffect("Start");
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene("MainScene");
+        StartCoroutine(SceneTransition.Run(TransitionAnimator, "MainScene"));
     }
 }

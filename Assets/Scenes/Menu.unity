@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94015d717b7cafe4c877ec178e3c3d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneTransition: {fileID: 2082796611}
+  TransitionAnimator: {fileID: 2082796611}
 --- !u!1001 &717492123
 PrefabInstance:
   m_ObjectHideFlags: 0

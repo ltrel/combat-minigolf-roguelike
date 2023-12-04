@@ -403,6 +403,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1833382546}
   chargeBar: {fileID: 885053219}
   powerBar: {fileID: 1220167111}
+  transitionAnimator: {fileID: 3435606364830208797}
 --- !u!58 &220990287
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2244,6 +2245,11 @@ PrefabInstance:
 --- !u!224 &3435606364830208796 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2964151494565943392, guid: ff84fbac6ecb75e4080a80dc9ced10bc, type: 3}
+  m_PrefabInstance: {fileID: 3435606364830208795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3435606364830208797 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3902475828430997921, guid: ff84fbac6ecb75e4080a80dc9ced10bc, type: 3}
   m_PrefabInstance: {fileID: 3435606364830208795}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6990099787507775904
