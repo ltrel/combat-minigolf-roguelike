@@ -21,6 +21,11 @@ public class BallController : MonoBehaviour
     private Vector2 mouseStartPos;
     private bool dead = false;
 
+    public void Kill()
+    {
+        StartCoroutine(GameOver());
+    }
+
     // Start is called before the first frame update
     void Start()
     {
