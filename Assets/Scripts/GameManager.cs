@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     {
         levelFrame = FindObjectOfType<LevelFrame>();
         enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        timeRemaining = 60;
+        timeRemaining = 10;
         score = 0;
 
         GenerateWalls();
@@ -50,8 +50,12 @@ public class GameManager : MonoBehaviour
         {
             ballController.Kill(); 
         }
+        else if (timeRemaining <= 10)
+        {
+            scoreText.color = Color.red;
+        }
 
-        timeRemaining -= Time.deltaTime;
+        timeRemaining = Mathf.Max(timeRemaining - Time.deltaTime, 0);
         scoreText.text = score.ToString("D4") + "\n\n" + FormatTime(timeRemaining); 
 
         if (Input.GetKeyDown(KeyCode.R))
