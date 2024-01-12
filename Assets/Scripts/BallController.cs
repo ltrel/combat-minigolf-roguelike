@@ -84,6 +84,7 @@ public class BallController : MonoBehaviour
             if (powerUpTime > 0)
             {
                 Destroy(collision.gameObject);
+                GameManager.Instance.SpawnEnemy();
                 AudioManager.Instance.PlayEffect("Kill");
                 powerUpTime = Mathf.Clamp(powerUpTime + 0.4f, 0, 2);
                 GameManager.Instance.IncrementScore(100);

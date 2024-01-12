@@ -24,4 +24,16 @@ public class LevelFrame : MonoBehaviour
 
         edgeCollider.SetPoints(new List<Vector2> { topRight , bottomRight, bottomLeft, topLeft, topRight });
     }
+
+    public Vector3 RandomPositionInside(float xPadding, float yPadding)
+    {
+        float randomX = Random.Range(-Width * 2 + xPadding, Width * 2 - xPadding);
+        float randomY = Random.Range(-Height * 2 + yPadding, Height * 2 - yPadding);
+        return new Vector3(randomX, randomY, 0);
+    }
+
+    public Vector3 RandomPositionInside()
+    {
+        return RandomPositionInside(0, 0);
+    }
 }
